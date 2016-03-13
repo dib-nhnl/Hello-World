@@ -30,7 +30,7 @@
 <h1>第七次操作结论：</h1>
 <p>在第六次操作，修改了text-01分支的文件，然后从桌面端直接发起pull request，顺利的merge到了master上，提示可以在云端删除分支text-01——我也这么做了；回到桌面端并且云同步，master分支更新了，但是text-01还存在着。尝试再次由text-01分支发起pull requeset，弹回错误：validation fail。我就直接在桌面端删除了分支text-01。现在新建了text-02分支，<em class="question">我这次要测试text-02分支在之后如果从云端删除，桌面端是否还可以继续操作这件事。——可以，再同步的话还会在云端再出现这个分支，因为是“同步”。</em>总结下第六次操作的结果：作为所有人，可以在commit分支改动后，直接将分支比如text-01的内容合并到master上，但这么说不准确，因为其实是：master update from text-01。所以这个操作其实本质上是提供了分支之间的互相update，比如分支01的人希望在自己开发中先获得分支02的人已经做出来的成果…我想大概这样是没错的。而pull request是很认真的去更新master<em class="question">（第六次操作的一个问题依然存疑：是否可以请求合并到X在B的仓库里的其他分支上？）</em>而且一旦pull request之后，git就认为提交申请的这个分支已经没用了，是已经开发完的阶段，是可以删除的平行世界了。<em class="question">（pull request是否对fork了该项目的其他人有作用还不知道，这也是需要确定的事</em>——对个人开发而言，commit分支的改动，然后直接update master from branch，然后再云同步，也能起到更新master的作用，但我觉得这是有缺陷的，从意义上来说。当然也可能在开发上也有缺陷：无法通知其他参与者。所以我想对项目而言pull也许有意义，就是上面的猜测。）</p>
 <p>对于个人开发而言，commit分支的修改，然后云同步，就可以让云端的分支确认修改；commit分支的修改，然后update master from branch，再云同步，效果就和直接branch发起pull request一样。所以我想pull request应该还有别的效果，比如通知项目的其他contributors。pull request也许还是应该作用于阶段性的结束。上述通过云同步更新master的方法我想对于项目所有人来说可能不是好习惯。至少这样做会让项目的其他参与者有困扰吧。</p>
-<p><em class="question">值得一提的是，git的活跃度统计，就是那个绿色小方块，似乎单纯的commit、云同步分支并不能有什么作用，似乎只有对master的contribute才算进。</em>我将在明天commit本次change并且同步，再尝试pull request之后对text-02分支在桌面端进行操作，分别测试以上2个问题。</p>
+<p>值得一提的是，git的活跃度统计，就是那个绿色小方块，似乎单纯的commit、云同步分支并不能有什么作用，似乎只有对master的contribute才算进。——第十二次修改中已经明确，并且为了确认想法直接看了官方文档（= =毕竟不是为这个，顺路测试的而已，不然直接看说明文档省事多了）我将在明天commit本次change并且同步，再尝试pull request之后对text-02分支在桌面端进行操作，分别测试以上2个问题。</p>
 <p>额外新增一个问题，本段书写前，我没有commit分支text-02的改动，关闭文件后，我在桌面端切换了分支到master，然后change也出现了，现在我切回分支text-02来打这段字，明天我要看看master分支是否受到影响。收到什么程度的影响。</p>
 <h1>第八次操作结论：</h1>
 <p>这是一次尝试性的修改。在云端删除了text-02分支后，在桌面端对仍然存在的分支text-02做修改，然后云同步看看会发生什么。</p>
@@ -52,9 +52,17 @@
 <ol>
 	<li>个人端“同步”按钮其实有2个形态：云同步形态和publish形态，后者是个人端有分支而云端没有分支的情况。</li>
 	<li>可以从分支向另外的分支发起pull request。同时，在云端的master分支下，可以得到提示，并询问是否把这个request也合并过来</li>
-	<li>向分支产生contribution也能达到日常打卡的效果。于是我心血来潮去查了一下contribution的说明，找到了官方的说明网页：<a href="https://help.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile/">contribution的统计规则</a>简单的说，pull request会被显示，commit在master上也会被显示（所以之前我commit在分支上，又merge了master和这个分支就相当于commit到master上了吧。</li>
+	<li>向分支发起pull request 也能产生contribution，能达到日常打卡的效果。于是我心血来潮去查了一下contribution的说明，找到了官方的说明网页：<a href="https://help.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile/">contribution的统计规则</a>简单的说，pull request会被显示，commit在master上也会被显示（所以之前我commit在分支上，又merge了master和这个分支就相当于commit到master上了吧。</li>
 </ol></p>
-<p>接下来我要提交本次修改以及结论，并准备开启下一个测试：修改文件名，看看同步会发生什么，先拿text-03分支来试试。btw，下一次建立的分支就该是text-05了。</p>
+<p>接下来我要提交本次修改以及结论，并准备开启下一个测试：修改文件名，看看同步会发生什么，拿text-05分支来试试。btw，下一次建立的分支就该是text-05了。</p>
+
+<h1>第十三次修改：</h1>
+<ol>
+	<li>修改了text-05分支下的文件名，修改记录里-了整个文件+了新名字文件，可见分支管理是管理这分支（这平行宇宙下）的整个仓库。</li>
+	<li>这次删除text-03的过程并不很顺利，在win桌面端上尝试了好几次都失败了，后来重启桌面端，全部同步了一次，总算是删除了。</li>
+	<li>测试准备告一段落，下次稍微做点编辑工作让内容好看一些。</li>
+
+</ol>
 
 
 </body>
