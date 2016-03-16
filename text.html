@@ -66,14 +66,19 @@
 
 
 <h1>第九次操作/：</h1>
-<p>我想分支的意义应该是在于多人开发的时候，或者多线开发的时候，提供一种相互合并，相互update的作用。对个人开发而言，直接在个人端把开发的分支合并到主线上，和用分支pull request到master上，在“更新master”这件事上并没有区别。我的猜想是，对于多人开发的项目，如果不采用“接受pull request请求”的方法来更新master的话，就起不到“交流”的作用。</p>
-<p><em class="question">现在有一个关于commit的问题：比如我在text-02的分支上打开文件进行修改，修改结束后，我在commit之前，将分支切换到master的view上，能否commit到master上？分支件的互相合并又是怎么样子的。</em></p>
+<ol>
+	<li>分支的意义应该是在于多人开发的时候，或者多线开发的时候，提供一种相互合并，相互update的作用。</li>
+	<li><em class="question">现在有一个关于commit的问题：比如我在text-02的分支上打开文件进行修改，修改结束后，我在commit之前，将分支切换到master的view上，能否commit到master上？分支件的互相合并又是怎么样子的。</em></li>
+</ol>
+
 
 <h1>第十次修改：</h1>
-<p>重新阅读本文档，整理思路，梳理关系，修正一些问题和结果。并将text-02分支pull到master去，算是一次阶段总结。</p>
+<p>重新阅读本文档，整理思路，梳理关系，修正一些问题和结果。</p>
+
 
 <h1>第十一次修改：</h1>
 <p>在text-04分支下做出此次改动，尝试是否可以向text-03分支发起pull request。</p>
+
 
 <h1>第十二次修改：</h1>
 <p>第十一次修改得到3个结论：
@@ -81,15 +86,14 @@
 	<li>个人端“同步”按钮其实有2个形态：云同步形态和publish形态，后者是个人端有分支而云端没有分支的情况。</li>
 	<li>可以从分支向另外的分支发起pull request。同时，在云端的master分支下，可以得到提示，并询问是否把这个request也合并过来</li>
 	<li>向分支发起pull request 也能产生contribution，能达到日常打卡的效果。于是我心血来潮去查了一下contribution的说明，找到了官方的说明网页：<a href="https://help.github.com/articles/why-are-my-contributions-not-showing-up-on-my-profile/">contribution的统计规则</a>简单的说，pull request会被显示，commit在master上也会被显示（所以之前我commit在分支上，又merge了master和这个分支就相当于commit到master上了吧。</li>
-</ol></p>
-<p>接下来我要提交本次修改以及结论，并准备开启下一个测试：修改文件名，看看同步会发生什么，拿text-05分支来试试。btw，下一次建立的分支就该是text-05了。</p>
+	<li>接下来我要提交本次修改以及结论，并准备开启下一个测试：修改文件名，看看同步会发生什么，拿text-05分支来试试。btw，下一次建立的分支就该是text-05了。</li>
+</ol>
 
 <h1>第十三次修改：</h1>
 <ol>
 	<li>修改了text-05分支下的文件名，修改记录里-了整个文件+了新名字文件，可见分支管理是管理这分支（这平行宇宙下）的整个仓库。</li>
 	<li>这次删除text-03的过程并不很顺利，在win桌面端上尝试了好几次都失败了，后来重启桌面端，全部同步了一次，总算是删除了。</li>
-	<li>测试准备告一段落，下次稍微做点编辑工作让内容好看一些。</li>
-
+	<li>测试告一段落</li>
 </ol>
 
 
